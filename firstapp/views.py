@@ -20,4 +20,4 @@ def upload(request):
         return redirect('index')
 
 def result(request):
-    return render(request, 'result1.html')
+    return render(request, 'result.html')
