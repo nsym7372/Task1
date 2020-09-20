@@ -15,9 +15,8 @@ def upload(request):
             animal.save()
         return redirect('result')
     else:
-        # form = BookForm()
-    # return render(request, 'blog/new.html', {'form': form})
         return redirect('index')
 
 def result(request):
-    return render(request, 'result.html')
+    data = Animal.objects.order_by('id').reverse()
+    return render(request, 'result.html', {'photo':  data[0].photo})
