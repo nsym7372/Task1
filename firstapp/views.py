@@ -1,5 +1,6 @@
+from firstapp.models import Animal
 from django.shortcuts import render, redirect
-
+from .forms import AnimalForm
 # Create your views here.
 
 def index(request):
@@ -7,16 +8,11 @@ def index(request):
 
 def upload(request):
     if request.method == "POST":
-        # form = BookForm(request.POST)
-        # if form.is_valid():
-        #     book = Book()
-        #     print(request)
-        #     book.title = request.POST['title']
-        #     book.link = request.POST['link']
-        #     book.image = request.FILES['image']
-        #     book.author = request.user
-        #     book.published_date = timezone.now()
-        #     book.save()
+        form = AnimalForm(request.POST)
+        if form.is_valid():
+            animal = Animal()
+            animal.photo = request.FILES.get('photo')
+            animal.save()
         return redirect('result')
     else:
         # form = BookForm()
@@ -24,4 +20,4 @@ def upload(request):
         return redirect('index')
 
 def result(request):
-    return render(request, 'result.html')
+    return render(request, 'result1.html')
