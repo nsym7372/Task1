@@ -6,9 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+        <input type="file" name="photo" / ><br />
+        {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-</form>
+        <button type="submit" class="save btn btn-default">アップロードして次の画面に</button>
+    </form>
 </body>
 </html>
