@@ -1,8 +1,10 @@
 *.pyc
 *~
 __pycache__
-djangeenv
+djangoenv
 db.sqlite3
 /static
 .DS_Store
-/images/*.png
+images
+debug.log
+*.pth
