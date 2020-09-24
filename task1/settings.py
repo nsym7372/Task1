@@ -123,3 +123,6 @@ STATIC_URL = '/static/'
 
 IMAGE_ROOT = os.path.join(BASE_DIR, 'images')
 IMAGE_URL = '/images/'
+
+import django_heroku
+django_heroku.settings(locals())
