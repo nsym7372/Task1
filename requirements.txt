@@ -38,7 +38,7 @@ sqlparse==0.3.1
 tensorboard==2.2.0
 tensorboard-plugin-wit==1.7.0
 threadpoolctl==2.1.0
-torch==1.6.0
+https://download.pytorch.org/whl/cpu/torch-1.6.0%2Bcpu-cp37-cp37m-linux_x86_64.whl
 torchvision==0.7.0
 tqdm==4.49.0
 urllib3==1.25.10
