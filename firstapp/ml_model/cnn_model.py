@@ -9,9 +9,6 @@ import pytorch_lightning as pl
 from pytorch_lightning import Trainer
 
 class TrainNet(pl.LightningModule):
-  
-  # def train_dataloader(self):
-  #   return torch.utils.data.DataLoader(train, self.batch_size, shuffle=True, num_workers=self.num_workers)
 
   def training_step(self, batch, batch_idx):
     x, t = batch
@@ -21,10 +18,6 @@ class TrainNet(pl.LightningModule):
     return results
 
 class ValidationNet(pl.LightningModule):
-
-#   @pl.data_loader
-#   def val_dataloader(self):
-#     return torch.utils.data.DataLoader(val, self.batch_size, num_workers=self.num_workers)
 
   def validation_step(self, batch, batch_idx):
     x, t = batch
