@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .forms import AnimalForm
 from torchvision import transforms
 from scipy.special import softmax
-from .cnn_model import Net
+from .ml_model.cnn_model import Net
 from PIL import Image
 import torch
 # Create your views here.
@@ -26,7 +26,7 @@ def result(request):
     data = Animal.objects.order_by('id').reverse()
 
     model = Net()
-    model.load_state_dict(torch.load('firstapp/trained.pth', map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load('firstapp/ml_model/trained.pth', map_location=torch.device('cpu')))
 
     mt = transforms.Compose([
             transforms.Resize((128, 128)),

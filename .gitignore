@@ -6,3 +6,8 @@ db.sqlite3
 /static
 .DS_Store
 debug.log
+/firstapp/ml_model/*
+!/firstapp/ml_model/*.py
+!/firstapp/ml_model/implement_model.ipynb
+!/firstapp/ml_model/train_model.ipynb
+/images
